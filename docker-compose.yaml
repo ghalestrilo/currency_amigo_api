@@ -1,0 +1,16 @@
+version: "3.6"
+services:
+  db:
+    image: postgres:14-alpine
+    privileged: true
+    ports:
+      - 5432:5432
+    volumes:
+      - postgresql_data:/var/lib/postgresql
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+
+volumes:
+  postgresql_data:
+    name: postgresql_data
